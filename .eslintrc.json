@@ -1,6 +1,15 @@
 {
-  "extends": ["react-app", "naver", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "naver",
+    "prettier"
+  ],
   "rules": {
-    "no-console": 1
-  }
+    "no-console": 1,
+    "no-unused-vars": 1
+  },
+  "root": true
 }

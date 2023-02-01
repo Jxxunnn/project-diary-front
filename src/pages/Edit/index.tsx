@@ -1,5 +1,6 @@
 import React from "react";
+import Edit from "../../components/Edit";
 
-const EditPage = () => <div>EditPage</div>;
+const EditPage = () => <Edit />;
 
 export default EditPage;

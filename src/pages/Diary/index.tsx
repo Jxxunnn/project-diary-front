@@ -1,5 +1,6 @@
 import React from "react";
+import Diary from "../../components/Diary";
 
-const DiaryPage = () => <div>DiaryPage</div>;
+const DiaryPage = () => <Diary />;
 
 export default DiaryPage;

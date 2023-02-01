@@ -1,0 +1,6 @@
+{
+  "extends": ["react-app", "naver", "prettier"],
+  "rules": {
+    "no-console": 1
+  }
+}

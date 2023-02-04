@@ -14,6 +14,7 @@ export const Button = styled.button<{ variant: string }>`
   ${({ variant }) => {
     if (variant === "positive")
       return css`
+        width: 100%;
         background-color: #64c964;
         color: white;
       `;

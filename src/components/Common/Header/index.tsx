@@ -3,8 +3,8 @@ import * as S from "./style";
 
 type PropsType = {
   headText: string;
-  leftChild: ReactNode;
-  rightChild: ReactNode;
+  leftChild?: ReactNode;
+  rightChild?: ReactNode;
 };
 
 const Header = ({ headText, leftChild, rightChild }: PropsType) => (

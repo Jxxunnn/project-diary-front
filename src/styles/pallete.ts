@@ -5,3 +5,11 @@ export const palette = {
   lightGreen: "#9dd772",
   green: "#64c964",
 } as const;
+
+export const colors = [
+  "green",
+  "lightGreen",
+  "yellow",
+  "orange",
+  "red",
+] as const;

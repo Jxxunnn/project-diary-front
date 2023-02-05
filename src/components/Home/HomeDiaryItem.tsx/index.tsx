@@ -17,7 +17,6 @@ const HomeDiaryItem = ({ id, emotion, content, date }: DiaryItemType) => {
     goodEmotionImage,
     happyEmotionImage,
   ];
-  const colors = ["green", "lightGreen", "yellow", "orange", "red"] as const;
 
   const stringDate = new Date(date).toLocaleDateString();
 
@@ -28,6 +27,8 @@ const HomeDiaryItem = ({ id, emotion, content, date }: DiaryItemType) => {
   const goToEditPage = () => {
     navigate(`/edit/${id}`);
   };
+
+  const colors = ["green", "lightGreen", "yellow", "orange", "red"] as const;
 
   return (
     <S.DiaryItem>

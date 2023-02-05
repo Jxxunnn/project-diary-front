@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
       width: 64rem;
     }
     @media screen and (max-width: 650px) {
-      width: 90vw;
+      width: 80vw;
     }
   }    
 `;

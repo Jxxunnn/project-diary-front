@@ -21,7 +21,7 @@ const DiaryEditor = ({ isEdit, originData }: PropsType) => {
   const contentRef = useRef<HTMLTextAreaElement>(null);
   const [date, setDate] = useState(getStringDate(new Date()));
 
-  const { onCreate, onEdit } = useContext(DiaryDispatchContext);
+  const { onCreate, onEdit, onRemove } = useContext(DiaryDispatchContext);
 
   const handleClickEmote = (emotionId: number) => {
     setEmotion(emotionId);
@@ -39,11 +39,20 @@ const DiaryEditor = ({ isEdit, originData }: PropsType) => {
     ) {
       if (originData) {
         onEdit(originData.id, date, content, emotion);
+      } else {
+        onCreate(date, content, emotion);
       }
-    } else {
-      onCreate(date, content, emotion);
     }
     navigate("/", { replace: true });
+  };
+
+  const handleRemove = () => {
+    if (window.confirm("정말 삭제하시겠습니까?")) {
+      if (originData) {
+        onRemove(originData.id);
+        navigate("/", { replace: true });
+      }
+    }
   };
 
   useEffect(() => {
@@ -64,6 +73,11 @@ const DiaryEditor = ({ isEdit, originData }: PropsType) => {
             text="< 뒤로가기"
             onClick={() => navigate(-1)}
           />
+        }
+        rightChild={
+          isEdit && (
+            <Button variant="negative" text="삭제하기" onClick={handleRemove} />
+          )
         }
       />
       <S.DiaryEditorSection>

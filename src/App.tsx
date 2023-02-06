@@ -90,11 +90,13 @@ function App() {
     if (localData) {
       const diaryList: DiaryStorageType[] = JSON.parse(localData);
 
-      diaryList.sort((a, b) => parseInt(b.id, 10) - parseInt(a.id, 10));
+      if (diaryList.length >= 1) {
+        diaryList.sort((a, b) => parseInt(b.id, 10) - parseInt(a.id, 10));
 
-      dataId.current = parseInt(diaryList[0].id, 10) + 1;
+        dataId.current = parseInt(diaryList[0].id, 10) + 1;
 
-      dispatch({ type: "INIT", localData: convertType(diaryList) });
+        dispatch({ type: "INIT", localData: convertType(diaryList) });
+      }
     }
   }, []);
 

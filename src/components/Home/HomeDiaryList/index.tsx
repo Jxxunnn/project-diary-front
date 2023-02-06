@@ -11,20 +11,20 @@ type PropsType = {
 };
 type CompareType = (a: DiaryItemType, b: DiaryItemType) => number;
 
+const sortOptionList = [
+  { value: "latest", name: "최신순" },
+  { value: "oldest", name: "지난순" },
+];
+const filterOptionList = [
+  { value: "all", name: "전부다" },
+  { value: "good", name: "좋은" },
+  { value: "bad", name: "안좋은" },
+];
+
 const DiaryList = ({ diaryList }: PropsType) => {
   const [sortType, setSortType] = useState("latest");
   const [filter, setFilter] = useState("all");
   const navigate = useNavigate();
-
-  const sortOptionList = [
-    { value: "latest", name: "최신순" },
-    { value: "oldest", name: "지난순" },
-  ];
-  const filterOptionList = [
-    { value: "all", name: "전부다" },
-    { value: "good", name: "좋은" },
-    { value: "bad", name: "안좋은" },
-  ];
 
   const getProcessdDiaryList = () => {
     const compareByDate: CompareType = (a, b) => {

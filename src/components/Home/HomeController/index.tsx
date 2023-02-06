@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import * as S from "./style";
 
 type PropsType = {
@@ -20,4 +20,6 @@ const HomeController = ({ value, onChange, optionList = [] }: PropsType) => (
   </S.Select>
 );
 
-export default HomeController;
+const MemoizedHomeController = memo<typeof HomeController>(HomeController);
+
+export default MemoizedHomeController;

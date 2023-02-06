@@ -6,3 +6,10 @@ export type DiaryItemType = {
 };
 
 export type DiaryStateType = { cart: DiaryItemType[] };
+
+export type DiaryStorageType = {
+  id: string;
+  date: string;
+  content: string;
+  emotion: string;
+};

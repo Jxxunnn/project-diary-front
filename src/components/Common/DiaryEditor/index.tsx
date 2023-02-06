@@ -1,4 +1,10 @@
-import React, { useState, useRef, useContext, useEffect } from "react";
+import React, {
+  useState,
+  useRef,
+  useContext,
+  useEffect,
+  useCallback,
+} from "react";
 import { useNavigate } from "react-router";
 import * as S from "./style";
 import { DiaryDispatchContext } from "../../../App";
@@ -23,9 +29,9 @@ const DiaryEditor = ({ isEdit, originData }: PropsType) => {
 
   const { onCreate, onEdit, onRemove } = useContext(DiaryDispatchContext);
 
-  const handleClickEmote = (emotionId: number) => {
+  const handleClickEmote = useCallback((emotionId: number) => {
     setEmotion(emotionId);
-  };
+  }, []);
 
   const handleSubmit = () => {
     if (content.length < 1) {

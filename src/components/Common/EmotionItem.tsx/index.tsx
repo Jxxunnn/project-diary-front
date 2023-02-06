@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import * as S from "./style";
 
 type PropsType = {
@@ -22,4 +22,6 @@ const EmotionItem = ({ id, img, descript, onClick, isSelected }: PropsType) => (
   </S.EmotionItem>
 );
 
-export default EmotionItem;
+const MemoizedEmotionItem = memo<typeof EmotionItem>(EmotionItem);
+
+export default MemoizedEmotionItem;

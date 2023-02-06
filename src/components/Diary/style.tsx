@@ -42,7 +42,7 @@ export const DiaryText = styled.p`
 export const DiaryTextContainer = styled.div``;
 export const DiaryImage = styled.img``;
 
-export const DiaryParagraphContainer = styled.p`
+export const DiaryParagraphContainer = styled.div`
   width: 100%;
   background-color: #ececec;
   border-radius: 0.5rem;

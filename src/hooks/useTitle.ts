@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router";
 
 type useTitleType = (
-  page: "diaryPage" | "editPage" | "newPage",
+  page: "diaryPage" | "editPage" | "newPage" | "homePage",
   id?: number
 ) => void;
 
@@ -25,6 +25,11 @@ export const useTitle: useTitleType = (page) => {
       const $title = document.getElementsByTagName("title")[0];
 
       $title.innerHTML = `감정 일기장 | 새 일기`;
+    }
+    if (page === "homePage") {
+      const $title = document.getElementsByTagName("title")[0];
+
+      $title.innerHTML = `감정 일기장`;
     }
   });
 };

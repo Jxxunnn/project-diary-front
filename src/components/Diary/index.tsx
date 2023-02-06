@@ -20,10 +20,10 @@ const Diary = () => {
 
       if (targetDiary) {
         setDiaryData(targetDiary);
-      } else {
-        alert("없는 일기입니다.");
-        navigate("/", { replace: true });
       }
+    } else {
+      alert("없는 일기입니다.");
+      navigate("/", { replace: true });
     }
   }, [id, diaryList]);
 
@@ -48,7 +48,7 @@ const Diary = () => {
           <Button
             text="수정하기"
             variant="default"
-            onClick={() => navigate(-1)}
+            onClick={() => navigate(`/edit/${id}`)}
           />
         }
       />

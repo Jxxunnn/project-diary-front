@@ -22,8 +22,8 @@ const DiaryList = ({ diaryList }: PropsType) => {
   ];
   const filterOptionList = [
     { value: "all", name: "전부다" },
-    { value: "good", name: "좋은 감정만" },
-    { value: "bad", name: "안좋은 감정만" },
+    { value: "good", name: "좋은" },
+    { value: "bad", name: "안좋은" },
   ];
 
   const getProcessdDiaryList = () => {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { useNavigate } from "react-router";
 import * as S from "./style";
 import Button from "../../Common/Button";
@@ -46,4 +46,6 @@ const HomeDiaryItem = ({ id, emotion, content, date }: DiaryItemType) => {
   );
 };
 
-export default HomeDiaryItem;
+const MemoizedHomeDiaryItem = memo<typeof HomeDiaryItem>(HomeDiaryItem);
+
+export default MemoizedHomeDiaryItem;

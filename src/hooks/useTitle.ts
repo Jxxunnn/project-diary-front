@@ -26,5 +26,5 @@ export const useTitle: useTitleType = (page) => {
 
       $title.innerHTML = `감정 일기장 | 새 일기`;
     }
-  }, []);
+  });
 };

@@ -1,15 +1,17 @@
-import React, { useReducer, useRef } from "react";
+import React, { useEffect, useReducer, useRef } from "react";
 import { BrowserRouter } from "react-router-dom";
 import GlobalStyle from "./styles/GlobalStyle";
 import GlobalFont from "./styles/GlobalFont";
 import Router from "./components/Router";
 
-import { DiaryItemType } from "./types/diary/diary.type";
+import { convertType } from "./utils/convertType";
+import { DiaryItemType, DiaryStorageType } from "./types/diary/diary.type";
 
 type ActionType = {
   type: string;
   data?: DiaryItemType;
   targetId?: number;
+  localData?: DiaryItemType[];
 };
 
 const reducer = (
@@ -20,7 +22,7 @@ const reducer = (
 
   switch (action.type) {
     case "INIT": {
-      return newState;
+      return action?.localData?.length ? [...action.localData] : newState;
     }
     case "CREATE": {
       if (!action.data) {
@@ -46,6 +48,8 @@ const reducer = (
     default:
       throw new Error("Unidentified reducer action type");
   }
+
+  localStorage.setItem("diary", JSON.stringify(newState));
   return newState;
 };
 
@@ -66,7 +70,7 @@ export const DiaryDispatchContext =
   React.createContext<DiaryDispatchContextType>({} as DiaryDispatchContextType);
 
 // 더미 데이터
-
+/*
 const dummyData = [
   { id: 1, emotion: 1, content: "오늘의 일기 1번", date: 1675408914782 },
   { id: 2, emotion: 2, content: "오늘의 일기 2번", date: 1675408914784 },
@@ -74,10 +78,25 @@ const dummyData = [
   { id: 4, emotion: 4, content: "오늘의 일기 4번", date: 1675408914788 },
   { id: 5, emotion: 5, content: "오늘의 일기 5번", date: 1675408914789 },
 ];
+*/
 
 function App() {
-  const [data, dispatch] = useReducer(reducer, dummyData);
+  const [data, dispatch] = useReducer(reducer, []);
   const dataId = useRef(0);
+
+  useEffect(() => {
+    const localData = localStorage.getItem("diary");
+
+    if (localData) {
+      const diaryList: DiaryStorageType[] = JSON.parse(localData);
+
+      diaryList.sort((a, b) => parseInt(b.id, 10) - parseInt(a.id, 10));
+
+      dataId.current = parseInt(diaryList[0].id, 10) + 1;
+
+      dispatch({ type: "INIT", localData: convertType(diaryList) });
+    }
+  }, []);
 
   // CREATE
   const onCreate = (

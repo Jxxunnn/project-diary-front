@@ -13,23 +13,23 @@ export const useTitle: useTitleType = (page) => {
     if (page === "diaryPage") {
       const $title = document.getElementsByTagName("title")[0];
 
-      $title.innerHTML = `감정 일기장 | ${id}번 일기`;
+      $title.innerHTML = `감성 일기장 | ${id}번 일기`;
     }
 
     if (page === "editPage") {
       const $title = document.getElementsByTagName("title")[0];
 
-      $title.innerHTML = `감정 일기장 | ${id}번 일기 수정`;
+      $title.innerHTML = `감성 일기장 | ${id}번 일기 수정`;
     }
     if (page === "newPage") {
       const $title = document.getElementsByTagName("title")[0];
 
-      $title.innerHTML = `감정 일기장 | 새 일기`;
+      $title.innerHTML = `감성 일기장 | 새 일기`;
     }
     if (page === "homePage") {
       const $title = document.getElementsByTagName("title")[0];
 
-      $title.innerHTML = `감정 일기장`;
+      $title.innerHTML = `감성 일기장`;
     }
   });
 };

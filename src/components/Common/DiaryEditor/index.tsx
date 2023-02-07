@@ -121,6 +121,7 @@ const DiaryEditor = ({ isEdit, originData }: PropsType) => {
             onChange={(e) => {
               setContent(e.target.value);
             }}
+            spellCheck="false"
           ></S.DiaryEditorTextArea>
         </S.DiaryEditorTextContainer>
         <S.DiaryEditorTextContainer>

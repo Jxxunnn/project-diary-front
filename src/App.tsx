@@ -1,10 +1,9 @@
 import React, { useEffect, useReducer, useRef } from "react";
 import { BrowserRouter } from "react-router-dom";
-import GlobalStyle from "./styles/GlobalStyle";
-import GlobalFont from "./styles/GlobalFont";
-import Router from "./components/Router";
-
-import { convertType } from "./utils/convertType";
+import Router from "@components/Router";
+import GlobalStyle from "@styles/GlobalStyle";
+import GlobalFont from "@styles/GlobalFont";
+import { convertType } from "@utils/convertType";
 import { DiaryItemType, DiaryStorageType } from "./types/diary/diary.type";
 
 type ActionType = {

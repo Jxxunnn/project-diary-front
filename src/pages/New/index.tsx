@@ -1,5 +1,5 @@
 import React from "react";
-import New from "../../components/New";
+import New from "@components/New";
 import { useTitle } from "../../hooks/useTitle";
 
 const NewPage = () => {

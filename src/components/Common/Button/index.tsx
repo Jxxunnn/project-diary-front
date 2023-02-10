@@ -7,14 +7,10 @@ type PropsType = {
   onClick: () => void;
 };
 
-const Button = ({ text, variant, onClick }: PropsType) => {
-  const a = null;
-
-  return (
-    <S.Button type="button" variant={variant} onClick={onClick}>
-      {text}
-    </S.Button>
-  );
-};
+const Button = ({ text, variant, onClick }: PropsType) => (
+  <S.Button type="button" variant={variant} onClick={onClick}>
+    {text}
+  </S.Button>
+);
 
 export default Button;

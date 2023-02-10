@@ -2,12 +2,12 @@ import React, { memo } from "react";
 import { useNavigate } from "react-router";
 import * as S from "./style";
 import Button from "../../Common/Button";
+import happyEmotionImage from "@assets/images/emotion5.png";
+import goodEmotionImage from "@assets/images/emotion4.png";
+import sosoEmotionImage from "@assets/images/emotion3.png";
+import badEmotionImage from "@assets/images/emotion2.png";
+import angryEmotionImage from "@assets/images/emotion1.png";
 import { DiaryItemType } from "../../../types/diary/diary.type";
-import happyEmotionImage from "../../../assets/images/emotion5.png";
-import goodEmotionImage from "../../../assets/images/emotion4.png";
-import sosoEmotionImage from "../../../assets/images/emotion3.png";
-import badEmotionImage from "../../../assets/images/emotion2.png";
-import angryEmotionImage from "../../../assets/images/emotion1.png";
 
 const HomeDiaryItem = ({ id, emotion, content, date }: DiaryItemType) => {
   const emotionList = [

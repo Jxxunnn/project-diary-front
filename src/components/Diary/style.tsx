@@ -58,3 +58,5 @@ export const DiaryParagraph = styled.p`
   font-weight: 400;
   line-height: 2.5;
 `;
+
+export const LoadingParagraph = styled.p``;

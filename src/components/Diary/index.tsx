@@ -27,7 +27,8 @@ const Diary = () => {
     }
   }, [id, diaryList]);
 
-  if (!diaryData) return <p>로딩중입니다...</p>;
+  if (!diaryData)
+    return <S.LoadingParagraph>로딩중입니다...</S.LoadingParagraph>;
 
   const currentEmotionData = emotionList.find(
     (it) => it.emotion_id === diaryData.emotion

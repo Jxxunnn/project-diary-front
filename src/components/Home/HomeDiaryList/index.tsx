@@ -4,7 +4,7 @@ import HomeController from "../HomeController";
 import Button from "../../Common/Button";
 import * as S from "./style";
 import { DiaryItemType } from "../../../types/diary/diary.type";
-import HomeDiaryItem from "../HomeDiaryItem.tsx";
+import HomeDiaryItem from "../HomeDiaryItem";
 
 type PropsType = {
   diaryList: DiaryItemType[];

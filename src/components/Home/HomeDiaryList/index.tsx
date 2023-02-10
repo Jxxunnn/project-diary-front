@@ -46,7 +46,7 @@ const DiaryList = ({ diaryList }: PropsType) => {
   };
 
   return (
-    <div>
+    <S.Container>
       <S.ControllerContainer>
         <S.LeftContainer>
           <HomeController
@@ -73,7 +73,7 @@ const DiaryList = ({ diaryList }: PropsType) => {
           <HomeDiaryItem key={diary.id} {...diary} />
         ))}
       </S.DiaryList>
-    </div>
+    </S.Container>
   );
 };
 

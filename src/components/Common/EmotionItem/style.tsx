@@ -12,7 +12,7 @@ export const EmotionItem = styled.li<{ isOn: boolean; variant: number }>`
   padding: 2rem 0;
   background-color: ${({ isOn, variant }) =>
     isOn ? palette[colors[variant - 1]] : "#ececec"};
-  color: ${({ isOn }) => (isOn ? "white" : "black")};
+  color: "black";
   cursor: pointer;
 `;
 

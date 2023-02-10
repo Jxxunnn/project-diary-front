@@ -16,7 +16,7 @@ export const Button = styled.button<{ variant: string }>`
       return css`
         width: 100%;
         background-color: #64c964;
-        color: white;
+        color: black;
       `;
 
     if (variant === "negative")

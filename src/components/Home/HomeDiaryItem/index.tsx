@@ -33,7 +33,10 @@ const HomeDiaryItem = ({ id, emotion, content, date }: DiaryItemType) => {
   return (
     <S.DiaryItem>
       <S.ImageContainer color={colors[emotion - 1]} onClick={goToDetailPage}>
-        <S.EmotionTimage src={emotionList[emotion - 1]} />
+        <S.EmotionTimage
+          src={emotionList[emotion - 1]}
+          alt={`${colors[emotion - 1]} emotional state`}
+        />
       </S.ImageContainer>
       <S.InformationContainer onClick={goToDetailPage}>
         <S.DiaryDate>{stringDate}</S.DiaryDate>

@@ -14,3 +14,5 @@ export const RightContainer = styled.div`
 `;
 
 export const DiaryList = styled.ul``;
+
+export const Container = styled.div``;

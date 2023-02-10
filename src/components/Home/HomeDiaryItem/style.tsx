@@ -24,9 +24,7 @@ export const DiaryDate = styled.time`
   font-size: 2.5rem;
 `;
 
-export const EmotionTimage = styled.img`
-  width: 50%;
-`;
+export const EmotionTimage = styled.img``;
 
 export const ButtonContainer = styled.div`
   min-width: 7rem;

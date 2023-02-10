@@ -6,6 +6,8 @@ export const DiaryEditorSection = styled.section`
   }
 `;
 
+export const DiaryEditorLabel = styled.label``;
+
 export const DiaryEditorTitle2 = styled.h2`
   margin: 2rem 0;
   font-size: 2.2rem;

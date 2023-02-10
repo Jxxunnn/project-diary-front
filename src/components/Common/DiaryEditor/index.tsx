@@ -87,9 +87,14 @@ const DiaryEditor = ({ isEdit, originData }: PropsType) => {
         }
       />
       <S.DiaryEditorSection>
-        <S.DiaryEditorTitle2>오늘은 언제인가요?</S.DiaryEditorTitle2>
+        <S.DiaryEditorTitle2>
+          <S.DiaryEditorLabel htmlFor="date">
+            오늘은 언제인가요?
+          </S.DiaryEditorLabel>
+        </S.DiaryEditorTitle2>
         <S.DiaryEditorInputContainer>
           <S.DiaryEditorInput
+            id="date"
             value={date}
             type="date"
             onChange={(e) => setDate(e.target.value)}

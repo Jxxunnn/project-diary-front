@@ -1,7 +1,8 @@
 import reset from "styled-reset";
 import { createGlobalStyle } from "styled-components";
-import NanumPenRegular from "../assets/fonts/NanumPenScript-Regular.woff";
-import YeonSungRegular from "../assets/fonts/YeonSung-Regular.woff";
+
+import NanumPenRegular from "@assets/fonts/NanumPenScript-Regular.woff";
+import YeonSungRegular from "@assets/fonts/YeonSung-Regular.woff";
 
 const GlobalFont = createGlobalStyle`    
      @font-face {

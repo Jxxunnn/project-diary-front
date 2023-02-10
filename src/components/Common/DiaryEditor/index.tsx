@@ -11,8 +11,8 @@ import { DiaryDispatchContext } from "../../../App";
 import Header from "../Header";
 import Button from "../Button";
 import EmotionItem from "../EmotionItem";
-import { getStringDate } from "../../../utils/date";
-import { emotionList } from "../../../utils/emotion";
+import { getStringDate } from "@utils/date";
+import { emotionList } from "@utils/emotion";
 import { DiaryItemType } from "../../../types/diary/diary.type";
 
 type PropsType = {

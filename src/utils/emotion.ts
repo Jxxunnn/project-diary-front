@@ -1,8 +1,8 @@
-import happyEmotionImage from "../assets/images/emotion1.png";
-import goodEmotionImage from "../assets/images/emotion2.png";
-import sosoEmotionImage from "../assets/images/emotion3.png";
-import badEmotionImage from "../assets/images/emotion4.png";
-import angryEmotionImage from "../assets/images/emotion5.png";
+import happyEmotionImage from "@assets/images/emotion1.png";
+import goodEmotionImage from "@assets/images/emotion2.png";
+import sosoEmotionImage from "@assets/images/emotion3.png";
+import badEmotionImage from "@assets/images/emotion4.png";
+import angryEmotionImage from "@assets/images/emotion5.png";
 
 export const emotionList = [
   {

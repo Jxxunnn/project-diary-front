@@ -4,8 +4,8 @@ import * as S from "./style";
 import { DiaryStateContext } from "../../App";
 import Button from "../Common/Button";
 import Header from "../Common/Header";
-import { emotionList } from "../../utils/emotion";
-import { getStringDate } from "../../utils/date";
+import { emotionList } from "@utils/emotion";
+import { getStringDate } from "@utils/date";
 import { DiaryItemType } from "../../types/diary/diary.type";
 
 const Diary = () => {

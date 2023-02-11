@@ -31,5 +31,5 @@ export const useTitle: useTitleType = (page) => {
 
       $title.innerHTML = `감성 일기장`;
     }
-  });
+  }, []);
 };

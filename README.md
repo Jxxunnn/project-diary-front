@@ -153,6 +153,9 @@ project-diary-front
 
  - <a href="https://github.com/Jxxunnn/project-diary-front/issues/1">컴포넌트 리렌더링 방지<a/>
  - <a href="https://github.com/Jxxunnn/project-diary-front/issues/3">SEO를 위한 메타 데이터 수정<a/>
+ - <a href="https://github.com/Jxxunnn/project-diary-front/issues/7">path alias 설정하기<a/>
+ - <a href="https://github.com/Jxxunnn/project-diary-front/issues/9">lighthouse로 웹페이지 진단하고 품질 개선하기<a/>
+ - <a href="https://github.com/Jxxunnn/project-diary-front/issues/9">브라우저 호환성을 위해 input type="date"직접 구현하기(진행 중)<a/>
  
  <br/>
  <p align="right"><a href="#top">(⬆️ Top)</a></p>
@@ -162,13 +165,14 @@ project-diary-front
 ## <a id="4장.-미해결-이슈-&-개선-가능-사항">4장. 미해결 이슈 & 개선 가능 사항</a>
 
 - [x] ~~이미지를 포함한 일기 item에 불필요한 재렌더링이 발생하고 있다. memo로 렌더링을 최소화하자.~~
+- [x] ~~절대 경로 설정하여 컴포넌트 경로를 깔끔히 관리해보자.~~
+- [x] ~~DOM을 조작하여 화면 이동에 따라 문서 타이틀을 변경해주자.~~ 
+- [ ] input type date는 ie와 구버전 브라우저에서 작동하지 않는다.
 - [ ] 일기의 텍스트가 길어져 해당 영역을 벗어나는 경우, 임시방편으로 slice 메서드를 사용하였다. 텍스트 생략이 자연스러워지도록 CSS ellipsis로 말줄임 처리할 예정이다.
 - [ ] 시멘틱 태그가 사용되지 않은 요소들이 존재한다. 적절히 교체하고, 헤딩 태그를 추가한 후에 ir 기법으로 요소 숨김 처리 하자.
 - [ ] Y축 스크롤바가 생길 시 root 컴포넌트가 좌측으로 밀려나 일관적인 UI를 보여주고 있지 않다.
 - [ ] 현재 브라우저의 대화상자를 사용하고 있는데 더 나은 UX를 위해 Portal을 사용하여 나만의 Modal을 만들어보자.
 - [ ] 기본적으로 CSR, SPA인 React 프로젝트를 SEO에 노출시키기 위해서는 추가적인 작업이 필요하다.
-- [ ] input type date는 safari에서 작동하지 않는다.
-- [ ] 절대 경로 설정하여 컴포넌트 경로를 깔끔히 관리해보자.
 - [ ] 이미지 스프라이트 기법으로 여러 개의 감정 이미지를 하나의 파일로 합쳐보자.
 - [ ] 현재 reducer의 로직이 App.js에 위치해있다. contexts 폴더를 새로 만들어 로직을 추상화하고 커스텀 훅으로 반환하자.
 - [ ] 공통적으로 사용되는 상수들을 constants 폴더에 정의해보자.

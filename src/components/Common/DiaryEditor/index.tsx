@@ -14,6 +14,8 @@ import EmotionItem from "../EmotionItem";
 import { getStringDate } from "@utils/date";
 import { emotionList } from "@utils/emotion";
 import { DiaryItemType } from "../../../types/diary/diary.type";
+import { PortalModal } from "../Modal";
+import useModal from "@hooks/useModal";
 
 type PropsType = {
   isEdit?: boolean;
@@ -22,6 +24,9 @@ type PropsType = {
 
 const DiaryEditor = ({ isEdit, originData }: PropsType) => {
   const navigate = useNavigate();
+  const { isShowing, toggle } = useModal();
+  const [message, setMessage] = useState("");
+  const [type, setType] = useState("");
   const [emotion, setEmotion] = useState(3);
   const [content, setContent] = useState("");
   const contentRef = useRef<HTMLTextAreaElement>(null);
@@ -38,26 +43,33 @@ const DiaryEditor = ({ isEdit, originData }: PropsType) => {
       contentRef.current?.focus();
       return;
     }
-    if (
-      window.confirm(
-        isEdit ? "일기를 수정하시겠습니까?" : "새로운 일기를 작성하시겠습니까?"
-      )
-    ) {
-      if (originData) {
-        onEdit(originData.id, date, content, emotion);
-      } else {
-        onCreate(date, content, emotion);
-      }
+    isEdit
+      ? setMessage("일기를 수정하시겠습니까?")
+      : setMessage("새로운 일기를 작성하시겠습니까");
+    setType("edit");
+    toggle();
+  };
+
+  const handleEdit = () => {
+    if (originData) {
+      onEdit(originData.id, date, content, emotion);
+    } else {
+      onCreate(date, content, emotion);
     }
+
     navigate("/", { replace: true });
   };
 
+  const handleRemoveModal = () => {
+    setMessage("정말 삭제하시겠습니까?");
+    setType("remove");
+    toggle();
+  };
+
   const handleRemove = () => {
-    if (window.confirm("정말 삭제하시겠습니까?")) {
-      if (originData) {
-        onRemove(originData.id);
-        navigate("/", { replace: true });
-      }
+    if (originData) {
+      onRemove(originData.id);
+      navigate("/", { replace: true });
     }
   };
 
@@ -82,7 +94,11 @@ const DiaryEditor = ({ isEdit, originData }: PropsType) => {
         }
         rightChild={
           isEdit && (
-            <Button variant="negative" text="삭제하기" onClick={handleRemove} />
+            <Button
+              variant="negative"
+              text="삭제하기"
+              onClick={handleRemoveModal}
+            />
           )
         }
       />
@@ -140,8 +156,26 @@ const DiaryEditor = ({ isEdit, originData }: PropsType) => {
           </S.DiaryEditorButtonContainer>
         </S.DiaryEditorTextContainer>
       </S.DiaryEditorSection>
+      <PortalModal
+        isOpen={isShowing}
+        hide={toggle}
+        message={message}
+        handleClick={type === "edit" ? handleEdit : handleRemove}
+      />
     </S.Layout>
   );
 };
 
 export default DiaryEditor;
+
+/* 
+  
+             <PortalModal
+        type={"delete"}
+        isOpen={isShowing}
+        hide={toggle}
+        message={message}
+        handleClick={handleRemove}
+      />
+
+*/

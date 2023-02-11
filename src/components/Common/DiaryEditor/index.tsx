@@ -167,15 +167,3 @@ const DiaryEditor = ({ isEdit, originData }: PropsType) => {
 };
 
 export default DiaryEditor;
-
-/* 
-  
-             <PortalModal
-        type={"delete"}
-        isOpen={isShowing}
-        hide={toggle}
-        message={message}
-        handleClick={handleRemove}
-      />
-
-*/

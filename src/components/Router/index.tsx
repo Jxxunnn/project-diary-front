@@ -5,10 +5,12 @@ import HomePage from "@pages/Home";
 import DiaryPage from "@pages/Diary";
 import EditPage from "@pages/Edit";
 import NewPage from "@pages/New";
+import Calendar from "@components/Common/Calendar";
 
 const Router = () => (
   <Routes>
-    <Route path="/" element={<HomePage />} />
+    <Route path="/" element={<Calendar />} />
+    {/* <Route path="/" element={<HomePage />} /> */}
     <Route path="/new" element={<NewPage />} />
     <Route path="/edit/:id" element={<EditPage />} />
     <Route path="/diary/:id" element={<DiaryPage />} />
